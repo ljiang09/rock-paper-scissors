@@ -16,7 +16,7 @@ function res = runMatlabModel(data)
         filter_data(:,ch) = highpass(data(:,1+ch), 5,1000);
     end
     
-    features = extractFeaturesExample(filter_data',1:4,1000);
+    features = extractTrainedFeatures(filter_data',1:4,1000);
    
     res = model.predict(features);
 end
